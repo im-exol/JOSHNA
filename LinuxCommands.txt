@@ -1,1 +1,14 @@
-
+             : shows the user who did the changes
+     git push repos-url     : pushes the file into the repository
+     ls                     : to show the directories and files prest in the system 
+     clear / cls            : to clear the teminal
+     git pull               : to pull the data from the remote repository to local folder
+     git clone              : this is another method to pull the data from a repository
+     touch file-name        : to add a file into the directory           I'm going to list out some of the comments I learnt in the day-2 class of full stack development training
+This will be the first file that i'll work on with linux commands
+LIST :-
+     git init               : to initialize 
+     git status             : to know the status of the git and also whether if the files are committed or not
+     git add file-name      : adds the file 
+     git commit -m "message" : commits the added files
+     git log   
