@@ -1,1 +1,39 @@
+A Linux file system is a structured collection of files on a disk drive or a partition. 
+A partition is a segment of memory and contains some specific data. In our machine,
+ there can be various partitions of the memory. Generally, every partition contains a file system.
+The Linux file system contains the following sections:
 
+     1 The root directory (/)
+     2 A specific data storage format (EXT3, EXT4, BTRFS, XFS and so on)
+     3 A partition or logical volume having a particular file system.
+ 
+ EXT3 :
+    ext3, or third extended filesystem, is a journaled file system 
+    that is commonly used by the Linux kernel.The performance (speed) of ext3 
+    is less attractive than competing Linux filesystems, such as ext4, JFS, ReiserFS,
+     and XFS, but ext3 has a significant advantage in that it allows in-place upgrades 
+     from ext2 without having to back up and restore data.
+
+EXT4 :
+    The ext4 journaling file system or fourth extended filesystem is a journaling file system 
+    for Linux, developed as the successor to ext3.ext4 was initially a series of backward-compatible
+     extensions to ext3, many of them originally developed by Cluster File Systems for the Lustre file
+      system between 2003 and 2006, meant to extend storage limits and add other performance improvements.
+      However,other Linux kernel developers opposed accepting extensions to ext3 for stability reasons.
+XFS :
+    XFS is a high-performance 64-bit journaling file system created by Silicon Graphics, Inc (SGI) in 1993.
+    XFS excels in the execution of parallel input/output (I/O) operations due to its design, which is based
+     on allocation groups (a type of subdivision of the physical volumes in which XFS is used- also shortened to AGs)  
+
+   EXT3, EXT4 & XFS are now outdated. Now-a-days people use NTFS & FAT.
+NTFS :
+    NTFS (New Technology File System) is a proprietary journaling file system developed by Microsoft.Starting
+    with Windows NT 3.1, it is the default file system of the Windows NT family.
+    NTFS has several technical improvements over the file systems that it superseded – File Allocation Table (FAT) 
+    and High Performance File System (HPFS) – such as improved support for metadata and advanced data structures to
+    improve performance, reliability, and disk space use. Additional extensions are a more
+    elaborate security system based on access control lists (ACLs) and file system journaling.    
+FAT :
+     Linux has several filesystem drivers for the File Allocation Table (FAT) filesystem format.All of the
+      Linux filesystem drivers support all three FAT types, namely FAT12, FAT16 and FAT32. Where they differ
+       is in the provision of support for long filenames      
