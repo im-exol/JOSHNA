@@ -4,7 +4,7 @@
      git push repos-url     : pushes the file into the repository
      ls                     : to show the directories and files prest in the system 
      clear / cls            : to clear the teminal
-     git pull               : to pull the data from the remote repository to local folder
+     git pull url           : to pull the data from the remote repository to local folder
      git clone              : this is another method to pull the data from a repository
      touch file-name        : to add a file into the directory        
      git init               : to initialize 
@@ -12,3 +12,21 @@
      git add file-name      : adds the file 
      git commit -m "message" : commits the added files
      git log                 : shows the user who did the changes
+     cat file-name           : shows the content of the file 
+     git branch              : to show all the branches
+     git branch any-name     : creates the brach with given name
+     git merge "branch-name" : to merge the changes committed in the branches
+     git push url            : to push data from local repository to remote repository
+     cd                      : to go to the other directory
+     cd ..                   :to go back to the previous directory
+     pwd                     : to print the working directory 
+     git branch              : to know the branches that are being created/used in the repository
+                               and the one with star is the branch we are currently working on
+    git reset                : to go back to previous commit
+    To get authorized we use  :
+                       git config --global user.name "user-name"
+                       git config --global user.email "email"
+    git --help             : gives us some common commands that we can use 
+    git rm file-name       : deletes the file 
+    git switch branch-name : switches the branch from currently working one to given one
+    git mv file-name       : move/renames the file                    
