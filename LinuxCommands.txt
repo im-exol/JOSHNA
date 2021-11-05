@@ -30,4 +30,4 @@
     git rm file-name       : deletes the file 
     git switch branch-name : switches the branch from currently working one to given one
     git mv file-name       : move/renames the file   
-    git version            : gives the version of git you have in your PC      
+    git version            : gives the version of git you have in your PC.      
