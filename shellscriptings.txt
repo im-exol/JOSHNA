@@ -1,0 +1,76 @@
+1.
+$ vi joshna.sh
+$ ls -l
+total 4
+-rwxr--r-- 1 root root 111 Nov 15 13:16 joshna.sh
+$ cat joshna.sh
+#!/bin/bash
+n=10
+if [ $n -lt 10 ];
+then
+echo "it is single digit number"
+else
+echo "it is two digit number"
+fi
+$ ./joshna.sh
+it is two digit number
+2.
+$ vi forloop.sh
+$ ls -l
+total 8
+-rw-r--r-- 1 root root 131 Nov 15 13:24 forloop.sh
+-rwxr--r-- 1 root root 111 Nov 15 13:16 joshna.sh
+$ chmod u+x forloop.sh 
+$ ls -l
+total 8
+-rwxr--r-- 1 root root 131 Nov 15 13:24 forloop.sh
+-rwxr--r-- 1 root root 111 Nov 15 13:16 joshna.sh
+$ vi forloop.sh
+exp 1\*1exp 1\*2exp 1\*3
+exp 2\*1exp 2\*2exp 2\*3
+exp 3\*1exp 3\*2exp 3\*3
+3.
+$ vi forloop2.sh
+$ ls -l
+total 12
+-rw-r--r-- 1 root root 114 Nov 15 13:41 forloop2.sh
+-rwxr--r-- 1 root root 151 Nov 15 13:33 forloop.sh
+-rwxr--r-- 1 root root 111 Nov 15 13:16 joshna.sh
+$ chmod u+x forloop2.sh 
+$ ls -l
+total 12
+-rwxr--r-- 1 root root 114 Nov 15 13:41 forloop2.sh
+-rwxr--r-- 1 root root 151 Nov 15 13:33 forloop.sh
+-rwxr--r-- 1 root root 111 Nov 15 13:16 joshna.sh
+$ cat forloop2.sh
+#!/bin/bash
+# file-poke - tell us stuff about files
+files= 'ls'
+for i in $files
+do
+echo -n "$i"
+grep $i $i
+done
+
+
+$ ./forloop2.sh
+forloop2.sh  forloop.sh  joshna.sh
+4.
+$ vi forloop3.sh
+$ cat forloop3.sh
+#!/bin/bash
+# file-poke - tell us stuff about files
+for i in *; do
+echo -n "$i"
+grep $i $i
+done 
+
+$ ls -l
+total 16
+-rwxr--r-- 1 root root 114 Nov 15 13:41 forloop2.sh
+-rwxr--r-- 1 root root  98 Nov 15 13:48 forloop3.sh
+-rwxr--r-- 1 root root 151 Nov 15 13:33 forloop.sh
+-rwxr--r-- 1 root root 111 Nov 15 13:16 joshna.sh
+$ ./forloop3.sh
+forloop2.shforloop3.shforloop.shjoshna.sh$ 
+5.
