@@ -1,4 +1,5 @@
 1.
+
 $ vi joshna.sh
 $ ls -l
 total 4
@@ -14,7 +15,9 @@ echo "it is two digit number"
 fi
 $ ./joshna.sh
 it is two digit number
+
 2.
+
 $ vi forloop.sh
 $ ls -l
 total 8
@@ -29,7 +32,9 @@ $ vi forloop.sh
 exp 1\*1exp 1\*2exp 1\*3
 exp 2\*1exp 2\*2exp 2\*3
 exp 3\*1exp 3\*2exp 3\*3
+
 3.
+
 $ vi forloop2.sh
 $ ls -l
 total 12
@@ -55,7 +60,9 @@ done
 
 $ ./forloop2.sh
 forloop2.sh  forloop.sh  joshna.sh
+
 4.
+
 $ vi forloop3.sh
 $ cat forloop3.sh
 #!/bin/bash
@@ -73,4 +80,208 @@ total 16
 -rwxr--r-- 1 root root 111 Nov 15 13:16 joshna.sh
 $ ./forloop3.sh
 forloop2.shforloop3.shforloop.shjoshna.sh$ 
+
 5.
+
+$ vi ifelse.sh
+$ ls -l
+total 4
+-rw-r--r-- 1 root root 134 Nov 17 05:53 ifelse.sh
+$ chmod u+x ifelse.sh
+$ ls -l
+total 4
+-rwxr--r-- 1 root root 134 Nov 17 05:53 ifelse.sh
+$ cat ifelse.sh
+#!/bin/bash
+if grep "UNIX" myfile >/dev/null
+then
+echo "UNIX occurs in myfile"
+else
+echo "no!"
+echo "UNIX doesnot ouccr in myfile"
+fi
+$ ./ifelse.sh
+grep: myfile: No such file or directory
+no!
+UNIX doesnot ouccr in myfile
+
+6.
+
+$ vi ifelif.sh
+$ ls -l
+total 8
+-rw-r--r-- 1 root root 190 Nov 17 06:06 ifelif.sh
+-rwxr--r-- 1 root root 134 Nov 17 05:53 ifelse.sh
+$ chmod u+x ifelif.sh
+$ ls -l
+total 8
+-rwxr--r-- 1 root root 190 Nov 17 06:06 ifelif.sh
+-rwxr--r-- 1 root root 134 Nov 17 05:53 ifelse.sh
+$ cat ifelif.sh
+#!/bin/bash
+if grep "UNIX" myfile >/dev/null
+then
+echo "UNIX occurs in myfile"
+elif grep "DOS" myfile >/dev/null
+then
+echo "Unix does not occur, but DOS does"
+else
+echo "Nobody is there"
+fi
+$ ./ifelif.sh
+grep: myfile: No such file or directory
+grep: myfile: No such file or directory
+Nobody is there
+
+7.
+
+$ vi useofcolon.sh
+$ ls -l
+total 12
+-rwxr--r-- 1 root root 190 Nov 17 06:06 ifelif.sh
+-rwxr--r-- 1 root root 134 Nov 17 05:53 ifelse.sh
+-rw-r--r-- 1 root root  80 Nov 17 06:14 useofcolon.sh
+$ chmod u+x useofcolon.sh
+$ ls -l
+total 12
+-rwxr--r-- 1 root root 190 Nov 17 06:06 ifelif.sh
+-rwxr--r-- 1 root root 134 Nov 17 05:53 ifelse.sh
+-rwxr--r-- 1 root root  80 Nov 17 06:14 useofcolon.sh
+$ cat useofcolon.sh
+#!/bin/bash
+if grep unix myfile
+then
+:
+else
+echo "Sorry, unix was not found"
+fi
+$ ./useofcolon.sh
+grep: myfile: No such file or directory
+Sorry, unix was not found
+
+8.
+
+$ vi filetests.sh
+$ ls -l
+total 16
+-rw-r--r-- 1 root root 127 Nov 17 06:18 filetests.sh
+-rwxr--r-- 1 root root 190 Nov 17 06:06 ifelif.sh
+-rwxr--r-- 1 root root 134 Nov 17 05:53 ifelse.sh
+-rwxr--r-- 1 root root  80 Nov 17 06:14 useofcolon.sh
+$ chmod u+x filetests.sh
+$ ls -l
+total 16
+-rwxr--r-- 1 root root 127 Nov 17 06:18 filetests.sh
+-rwxr--r-- 1 root root 190 Nov 17 06:06 ifelif.sh
+-rwxr--r-- 1 root root 134 Nov 17 05:53 ifelse.sh
+-rwxr--r-- 1 root root  80 Nov 17 06:14 useofcolon.sh
+$ cat filetests.sh
+#!/bin/bash
+count=0
+for i in *; do
+if test -x $i; then
+count="expr $count + 1"
+fi
+done
+echo "Total of $count files executable"
+$ ./filetests.sh
+Total of expr expr expr expr 0 + 1 + 1 + 1 + 1 files executable
+
+9.
+
+$ vi stringtests.sh
+$ ls -l
+total 4
+-rwxr--r-- 1 root root 89 Nov 17 13:08 stringtests.sh
+$ cat stringtests.sh
+#!/bin/bash
+if test -z $REMOTEHOST
+then
+:
+else
+DISPLAY="$REMOTEHOST:0"
+export DISPLAY
+fi
+$ ./stringtests.sh
+$ 
+
+10.
+
+$ vi integertests.sh
+$ ls -l
+total 8
+-rw-r--r-- 1 root root 114 Nov 17 13:13 integertests.sh
+-rwxr--r-- 1 root root  89 Nov 17 13:08 stringtests.sh
+$ chmod u+x integertests.sh
+$ ls -l
+total 8
+-rwxr--r-- 1 root root 114 Nov 17 13:13 integertests.sh
+-rwxr--r-- 1 root root  89 Nov 17 13:08 stringtests.sh
+$ cat integertests.sh
+#!/bin/bash
+smallest=10000
+for i in 5 8 19 8 7 3; do
+if test $smallest; then
+smallest=$i
+fi
+done
+echo "$smallest"
+$ ./integertests.sh
+3
+
+11.
+
+$ vi useofsqb.sh
+$ ls -l
+total 12
+-rwxr--r-- 1 root root 114 Nov 17 13:13 integertests.sh
+-rwxr--r-- 1 root root  89 Nov 17 13:08 stringtests.sh
+-rw-r--r-- 1 root root 121 Nov 17 13:18 useofsqb.sh
+$ chmod u+x useofsqb.sh
+$ ls -l
+total 12
+-rwxr--r-- 1 root root 114 Nov 17 13:13 integertests.sh
+-rwxr--r-- 1 root root  89 Nov 17 13:08 stringtests.sh
+-rwxr--r-- 1 root root 121 Nov 17 13:18 useofsqb.sh
+$ cat useofsqb.sh
+#!/bin/bash
+smallest=10000
+for i in 5 8 19 8 7 3; do
+if [ $i -lt $smallest ] ; then
+smallest=$i
+fi
+done
+echo "$smallest"
+$ ./useofsqb.sh
+3
+$
+
+12.
+
+$ vi whileloop.sh
+$ ls -l
+total 16
+-rwxr--r-- 1 root root 114 Nov 17 13:13 integertests.sh
+-rwxr--r-- 1 root root  89 Nov 17 13:08 stringtests.sh
+-rwxr--r-- 1 root root 121 Nov 17 13:18 useofsqb.sh
+-rw-r--r-- 1 root root 111 Nov 17 13:23 whileloop.sh
+$ chmod u+x whileloop.sh
+$ ls -l
+total 16
+-rwxr--r-- 1 root root 114 Nov 17 13:13 integertests.sh
+-rwxr--r-- 1 root root  89 Nov 17 13:08 stringtests.sh
+-rwxr--r-- 1 root root 121 Nov 17 13:18 useofsqb.sh
+-rwxr--r-- 1 root root 111 Nov 17 13:23 whileloop.sh
+$ cat whileloop.sh
+#!/bin/bash
+i=1
+sum=10
+while [ $i -le 100 ]; do
+sum= "expr $sum +1"
+i="expr $i + 1"
+done
+echo "The sum is $sum"
+$ ./whileloop.sh
+./whileloop.sh: line 5: expr 0 +1: command not found
+./whileloop.sh: line 4: [: too many arguments
+The sum is 10
